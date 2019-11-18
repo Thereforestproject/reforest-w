@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title>Reforest</title>
+    <!-- <title>Reforest</title> -->
     <!-- Required meta tags -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -32,7 +32,20 @@
             </button>
 
             <div class="container-fluid">
-                <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+                    <?php
+                        wp_nav_menu( array(
+                            'theme_location'    => 'menu-principal',
+                            'depth'             => 2,
+                            'container'         => 'div',
+                            'container_class'   => 'collapse navbar-collapse justify-content-end',
+                            'container_id'      => 'navbarSupportedContent',
+                            'menu_class'        => 'navbar-nav align-items-center',
+                            'fallback_cb'       => 'WP_Bootstrap_Navwalker::fallback',
+                            'walker'            => new WP_Bootstrap_Navwalker(),
+                        ) );
+                ?>
+            
+                <!-- <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
 
                     <div class="navbar-nav align-items-center">
                         <a class="nav-link" href="index.html">Inicio
@@ -41,7 +54,7 @@
                         <a class="nav-link" href="comunidad/index.html">Comunidad</a>
                         <a class="nav-link" href="comunidad.html">Comunidad</a>
                     </div>
-                </div>
+                </div> -->
                 <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
                     <ul class="navbar-nav align-items-center">
                         <li class="nav-item">
