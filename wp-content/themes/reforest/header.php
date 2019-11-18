@@ -75,7 +75,12 @@
     </header>
 
     <!-- Blog -->
+    <div class="container text-center" style="margin-top: 80px;">
+    <a href="">
+        <img src="http://localhost/reforest-w/wp-content/uploads/2019/11/reforest_blog.png" class="img-fluid " alt="Reforest Blog" style="margin: 0 auto; max-height: 80px;">
+    </a>
+    </div>
 
-    <h2 class="text-center" style="font-size: 50px; padding-bottom: 30px; font-family: Montserrat;">
-        Reforest Blog</h2>
+    <!-- <h2 class="text-center" style="font-size: 50px; padding-bottom: 30px; font-family: Montserrat;">
+        </h2> -->
     <hr>

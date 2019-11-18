@@ -108,3 +108,8 @@ button.bg-primary:focus {
     height: auto;
     border-radius: 0px;
 }
+a {
+    color: #6c757d!important;
+    font-size: 80%;
+    font-weight: 400;
+}
