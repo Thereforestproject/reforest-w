@@ -102,3 +102,9 @@ button.bg-primary:focus {
       padding-top: 100px;
       min-height: 550px;
   }
+
+.card-img {
+    width: 100%;
+    height: auto;
+    border-radius: 0px;
+}

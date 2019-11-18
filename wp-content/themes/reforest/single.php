@@ -1,65 +1,52 @@
 <?php get_header(); ?>
+<!-- Entrada -->
 
-<div class="row">
-
-        <!-- Entradas -->
-        <div class="col-lg-12">
-
-            <!-- Entrada -->
-            <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
-            
-                <div class="row no-gutters">
-                <div class="col-md-4">
-                <?php
-                   // Checar si existe la imagen destacada
-                    if (has_post_thumbnail() ) {
-                        the_post_thumbnail( 'post-thumbnails', array( 'class' => 'card-img' ) );
-                    }
-                ?>
+<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
+    <div class="container-fluid" style="padding-top: 100px">
+            <div class="container rounded shadow" style="">
+                <div style="background: #F7F7F9">
+                    <div class="row" style="background: #F7F7F9">
+                        <div class="col-8" style="padding-left: 0px; padding-right: 0px">
+                                    <?php
+                            // Checar si existe la imagen destacada
+                                if (has_post_thumbnail() ) {
+                                    the_post_thumbnail( 'post-thumbnails', array( 'class' => 'card-img' ) );
+                                }
+                            ?>
+                            <!-- <img src="img/amazonas.png" style="width: 550px"> -->
+                        </div>
+                        <div class="col-4" style="font-size: 60px;font-family: Montserrat;">
+                            <h1><?php the_title(); ?></h1>
+                        </div>
+                    </div>
                 </div>
-                <div class="col-md-8">
-                    <div class="card-body">
-                            <h5 class="card-title"><?php the_title(); ?></h5>
-                        <p class="card-text"><?php
-                            the_excerpt();
-                        ?></p>
-                        <p class="card-text"><small class="text-muted"><?php the_time('F j, Y'); ?></small>
-                            <span class="card-text"><small class="text-muted"> / <?php
-                                the_author();
-                            ?></small></span>
-                        </p>
-
-                        <?php the_content(); ?>
-
-                        <?php
+                <div class="texto" style="padding: 50px">
+                <?php the_content(); ?>
+                </div>
+                <div class="propiedades">
+                <p>
+                    <small class="text-muted">Autor: <?php  the_author(); ?> </small>
+                </p>
+                <p>
+                    <small class="text-muted">Publicado: <?php   the_time('F j, Y'); ?> </small>
+                </p>
+                </div>
+                <hr>
+                <div class="comentario">
+                <?php
                             // If comments are open or we have at least one comment, load up the comment template.
                         if ( comments_open() || get_comments_number() ) :
                             comments_template();
                         endif;
                         
                         ?>
-
-                    </div>
                 </div>
-            </div>
-
-            <?php endwhile; endif; ?>
-
-            <!-- Entrada -->
-
-       </div>
-
-        <!-- Entradas -->
-
-        <!-- Aside -->
-
-        <!-- <div class="col-lg-3">
-
-        </div> -->
-
-        <!-- Aside -->
+        </div>
     </div>
+<?php endwhile; endif; ?>
 
-    <!-- Blog -->
+<!-- Entradas -->
+
+
 
     <?php get_footer(); ?>

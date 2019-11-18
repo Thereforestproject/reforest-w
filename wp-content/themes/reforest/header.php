@@ -24,7 +24,7 @@
         <!-- Menú -->
         <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
             <a class="navbar-brand" href="index.html">
-                <img src="img/reforest.png" height="30" alt="log-reforest" title="logo-reforest">
+                <img src="http://localhost/reforest-w/wp-content/uploads/2019/11/reforest.png" height="30" alt="log-reforest" title="logo-reforest">
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
