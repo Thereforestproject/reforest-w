@@ -8,36 +8,36 @@
                 <!-- Entrada -->
                 <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
                 <div class="col-md-4">
-                    <div class="card" style="border: 0px solid rgba(0,0,0,.125); border-radius: 0;">
+                    <div class="card" style="border: 0px solid rgba(0,0,0,.125); border-radius: 0; margin-bottom: 15px">
                         <?php
-                        // Checar si existe la imagen destacada
+                            // Checar si existe la imagen destacada
                             if (has_post_thumbnail() ) {
                                 the_post_thumbnail( 'post-thumbnails', array( 'class' => 'card-img' ) );
                             }
                         ?>
-                         <p class="card-text" style="margin-top: 0.50rem; margin-bottom: 0.25rem;">
-                         <?php the_tags('','/',''); ?>
-                        </p>
-                        <a href="<?php the_permalink();?>">
-                            <h5 class="card-title" style="font-family: Montserrat; padding-top: 10px; color: #565656;
-                            /* padding-bottom: 10px; */
-                            "><?php
-                                the_title();
-                            ?></h5>
-                        </a>
+
+                        <span class="post-tags">
+                            <?php the_tags('',' / ',''); ?>
+                        </span>
+
+                        <div class="post-tittle">
+                            <a class="link-post-tittle" href="<?php the_permalink();?>">
+                                <h2 class="card-title">
+                                    <?php the_title();?> 
+                                </h2>
+                            </a>
+                        </div>
                        
                         <div class="card-body" style="padding: 0rem; #5d738d">
-                            <?php
-                            the_excerpt();
-                        ?>
+                            <?php the_excerpt(); ?>
                         </div>
-                        <p class="card-text">
-                            <small class="text-muted text-uppercase"><?php the_time('F j, Y'); ?></small>
-                            <span class="card-text"><small class="text-muted"> / <?php
-                                the_author();
-                            ?></small></span>
-                        </p>
-                      
+
+                        <div class="post-more">
+                            <small class="text-muted text-uppercase"> <?php the_time('F j, Y'); ?> </small>
+                            <small class="text-muted"> / <?php the_author();?> </small>
+                            <a class="float-right read-more" href="<?php the_permalink(); ?> ">Leer más</a>
+                        </div>
+                           
                     </div>
                 </div>
                 <?php endwhile; endif; ?>
